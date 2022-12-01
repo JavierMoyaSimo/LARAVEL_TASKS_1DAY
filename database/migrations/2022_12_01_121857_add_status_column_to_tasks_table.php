@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->boolean('status');
+            //Le indicamos que su type es boolean, y le indicamos con el after('name'), que nos cree la columna justo después
+            //de la columna 'name'
+            $table->boolean('status')->after('name');
         });
     }
 
